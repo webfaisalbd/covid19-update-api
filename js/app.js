@@ -2,10 +2,17 @@
 const buttonClicked = document.getElementById('search_button');
 const countryName = document.getElementById('countryName');
 
+// spinner toggle
+const toggleSpinner = displayValue => {
+    document.getElementById('spinner').style.display = displayValue;
+}
+
 
 buttonClicked.addEventListener('click', function () {
     const searchValue = countryName.value;
     countryName.value = '';
+    // toggleSpinner need to be block 
+    toggleSpinner('block');
     if (searchValue == '') {
         console.log('hmmm');
         document.getElementById('status').style.display = 'none';
@@ -22,8 +29,10 @@ buttonClicked.addEventListener('click', function () {
 
 
 const display = data => {
-    console.log(data);
+    // console.log(data);
 
+    // toggleSpinner need to be none 
+    toggleSpinner('none');
 
     // set value
     const country = data.Country;
