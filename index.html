@@ -15,6 +15,10 @@
             background-size: cover;
             height: 100vh;
         }
+
+        #spinner {
+            display: none;
+        }
     </style>
 </head>
 <header>
@@ -25,13 +29,22 @@
     <div class="container">
         <form class="col-md-6 m-auto py-5">
             <div class="input-group mb-5">
-                <input type="text" id="city" class="form-control"
+                <!-- input  -->
+                <input type="text" id="countryName" class="form-control"
                     placeholder="Enter a country name for covid status ...">
+                <!-- search button  -->
                 <div class="input-group-append">
                     <button type="button" class="btn btn-danger" id="search_button">Search</button>
                 </div>
             </div>
         </form>
+
+
+        <!-- spinner  -->
+        <div id="spinner" class="text-white text-center mb-3">loading......</div>
+
+
+        <!-- output  -->
         <div class="weather-status text-white text-center">
 
             <p>Country: <span id="country"></span></p>
