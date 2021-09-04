@@ -6,6 +6,12 @@ const countryName = document.getElementById('countryName');
 buttonClicked.addEventListener('click', function () {
     const searchValue = countryName.value;
     countryName.value = '';
+    if (searchValue == '') {
+        console.log('hmmm');
+        document.getElementById('status').style.display = 'none';
+        document.getElementById('error-status').innerText = "You have to input a country name"
+        return;
+    }
     const url = `https://api.covid19api.com/total/country/${searchValue}`;
 
 
